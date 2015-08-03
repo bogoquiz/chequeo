@@ -4,14 +4,13 @@ angular.module('bucketList.controllers', [])
         function($scope, $rootScope, $firebaseAuth, $window) {
             // check session
             $rootScope.checkSession();
-            /*
+
             $scope.user = {
                 email: "",
                 password: ""
-            };*/
+            };
             $scope.validateUser = function() {
                 $rootScope.show('Please wait.. Authenticating');
-                $rootScope.checkSession();
                 var email = this.user.email;
                 var password = this.user.password;
                 if (!email || !password) {
@@ -51,10 +50,8 @@ angular.module('bucketList.controllers', [])
             password: ""
         };
         $scope.createUser = function() {
-            console.log($scope.user);
-            var email = $scope.user.email;
-            var password = $scope.user.password;
-            
+            var email = this.user.email;
+            var password = this.user.password;
             if (!email || !password) {
                 $rootScope.notify("Please enter valid credentials");
                 return false;
