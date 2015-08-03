@@ -115,5 +115,5 @@ angular.module('bucketList', ['ionic', 'firebase', 'bucketList.controllers'])
         }
       }
     })
-    $urlRouterProvider.otherwise('/auth/signin');
+    $urlRouterProvider.otherwise('/auth/signup');
 });
